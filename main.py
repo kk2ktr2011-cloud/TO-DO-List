@@ -1,8 +1,9 @@
 import json
 
-print("This application will allow you to save tasks and put their priorty and completion.")
+with open("tasks.json", "r") as file:
+    tasks = json.load("tasks.json")
 
-tasks = []
+print("This application will allow you to save tasks and put their priorty and completion.")
 
 while True:
     
