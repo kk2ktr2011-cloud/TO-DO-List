@@ -1,8 +1,12 @@
 import json
 
-with open("tasks.json", "r") as file:
-    tasks = json.load("tasks.json")
-
+try:
+    with open("tasks.json", "r") as file:
+        tasks = json.load(file)
+        
+except FileNotFoundError:
+    tasks = []
+    
 print("This application will allow you to save tasks and put their priorty and completion.")
 
 while True:
@@ -54,6 +58,6 @@ while True:
     else:
         continue_or_not = input("Invalid Input. Try again. Y/N: ")
 
-print(tasks)
+json_list = json.dump(tasks)
 
 print("This is the end of this instance of the TO-DO List. ")
